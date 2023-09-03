@@ -71,7 +71,7 @@ def main():
         btn_edit.grid(row=len(tags)//3+2, column=0, pady=20)
         btn_clear = Button(text="Clear selection", bg="azure2", fg="salmon1", font=(12), command=clear, bd = 0)
         btn_clear.grid(row=len(tags)//3+1, column=1, pady=20)
-        btn_refresh = Button(text="Refresh window", bg="azure2", fg="grey27", font=(12), command=refresh, bd = 0)
+        btn_refresh = Button(text="Refresh", bg="azure2", fg="grey27", font=(12), command=refresh, bd = 0)
         btn_refresh.grid(row=len(tags)//3+2, column=1, pady=20)
 
         # Adjust row and column configurations to fit the checkboxes
