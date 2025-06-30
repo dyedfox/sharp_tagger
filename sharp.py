@@ -39,7 +39,7 @@ def main():
                 tags = []
         
         tk = Tk()
-        tk.configure(bg='grey97')
+        tk.configure(bg='grey23')
 
         checkboxes = []
         checkboxes_var = []
@@ -47,31 +47,28 @@ def main():
         tk.iconphoto(False, PhotoImage(file=f"{CURRENT_DIR}icon.png"))
         tk.title('sHarp Tagger')
 
-        checkboxes = []
-        checkboxes_var = []
-
         for count, tag in enumerate(tags):
             tag = tag.strip()
-            checked_box = 0
+            #checked_box = 0
             checkboxes_var.append(IntVar())
             if tag.endswith('+') or tag.endswith('*'):
                 checkboxes_var[count].set(1)
                 box_title = tag[:-1]
             else:
                 box_title = tag
-            checkboxes.append(Checkbutton(tk, text=box_title, variable=checkboxes_var[count], onvalue=1, offvalue=0, bg='grey97', highlightthickness=0))
+            checkboxes.append(Checkbutton(tk, text=box_title, variable=checkboxes_var[count], onvalue=1, activebackground="grey15", activeforeground="grey70", offvalue=0, font=(15), selectcolor="black", bg='grey23', fg="grey70", highlightthickness=0))
             # Calculate the row and column index for each checkbox
             row = count // int(columns_number)
             col = count % int(columns_number)
             checkboxes[count].grid(row=row, column=col, sticky=W, padx=10)
 
-        btn_copy = Button(text="COPY!", bg="azure2", fg="grey27", font=(12), command=to_clipboard, bd = 0)
+        btn_copy = Button(text="COPY!", bg="purple4", fg="white", font=(12), command=to_clipboard, bd = 0)
         btn_copy.grid(row=len(tags)//3+1, column=0, pady=20)
-        btn_edit = Button(text="Edit tags", bg="azure2", fg="grey27", font=(12), command=edit_tags, bd = 0)
+        btn_edit = Button(text="Edit tags", bg="purple4", fg="white", font=(12), command=edit_tags, bd = 0)
         btn_edit.grid(row=len(tags)//3+2, column=0, pady=20)
-        btn_clear = Button(text="Clear selection", bg="azure2", fg="salmon1", font=(12), command=clear, bd = 0)
+        btn_clear = Button(text="Clear selection", bg="purple4", fg="salmon1", font=(12), command=clear, bd = 0)
         btn_clear.grid(row=len(tags)//3+1, column=1, pady=20)
-        btn_refresh = Button(text="Refresh", bg="azure2", fg="grey27", font=(12), command=refresh, bd = 0)
+        btn_refresh = Button(text="Refresh window", bg="purple4", fg="white", font=(12), command=refresh, bd = 0)
         btn_refresh.grid(row=len(tags)//3+2, column=1, pady=20)
 
         # Adjust row and column configurations to fit the checkboxes
