@@ -2,6 +2,8 @@
 
 A simple GUI tag selector that copies selected tags to clipboard.
 
+![Screenshot](./screenshot.png)
+
 ## Features
 
 - Select multiple tags via checkboxes
