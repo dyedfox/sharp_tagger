@@ -56,7 +56,7 @@ def main():
                 box_title = tag[:-1]
             else:
                 box_title = tag
-            checkboxes.append(Checkbutton(tk, text=box_title, variable=checkboxes_var[count], onvalue=1, activebackground="grey15", activeforeground="grey70", offvalue=0, font=(15), selectcolor="black", bg='grey23', fg="grey70", highlightthickness=0))
+            checkboxes.append(Checkbutton(tk, text=box_title, variable=checkboxes_var[count], onvalue=1, activebackground="grey15", activeforeground="grey70", offvalue=0, selectcolor="black", bg='grey23', fg="grey70", highlightthickness=0))
             # Calculate the row and column index for each checkbox
             row = count // int(columns_number)
             col = count % int(columns_number)
